@@ -12,7 +12,9 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        // Trust Railway proxies for HTTPS detection
+        $middleware->trustProxies(at: '*');
+        
         $middleware->alias([
             'role' => \App\Http\Middleware\RoleMiddleware::class,
         ]);
