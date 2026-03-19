@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ['php82', 'php82Packages.composer']
+
+[phases.install]
+cmds = ['composer install --optimize-autoloader --no-dev']
+
+[start]
+cmd = 'bash start.sh'
