@@ -14,4 +14,4 @@ cmds = [
 ]
 
 [start]
-cmd = 'php artisan migrate --force && php -S 0.0.0.0:$PORT -t public'
+cmd = 'php artisan migrate --force && echo "Migration complete. Starting PHP server on port $PORT..." && php -S 0.0.0.0:$PORT -t public 2>&1'
