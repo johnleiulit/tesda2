@@ -5,7 +5,8 @@ nixPkgs = ['php82', 'php82Packages.composer', 'nodejs_20']
 cmds = [
     'composer install --no-dev --optimize-autoloader',
     'npm ci',
-    'npm run build'
+    'npm run build',
+    'chmod +x start.sh'
 ]
 
 [phases.build]
@@ -14,4 +15,4 @@ cmds = [
 ]
 
 [start]
-cmd = 'sh -c "php artisan migrate --force && echo Starting server on port $PORT && exec php artisan serve --host=0.0.0.0 --port=$PORT"'
+cmd = './start.sh'
