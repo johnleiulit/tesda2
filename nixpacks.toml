@@ -10,8 +10,10 @@ cmds = [
 
 [phases.build]
 cmds = [
-    'php artisan storage:link || true'
+    'php artisan storage:link || true',
+    'php artisan config:clear',
+    'php artisan cache:clear'
 ]
 
 [start]
-cmd = 'php artisan migrate --force && echo "Migration complete. Starting PHP server on port $PORT..." && php -S 0.0.0.0:$PORT -t public 2>&1'
+cmd = 'php artisan migrate --force && echo "Starting server on 0.0.0.0:$PORT" && php artisan serve --host=0.0.0.0 --port=$PORT --verbose'
