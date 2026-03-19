@@ -23,6 +23,7 @@ echo "=== Creating storage link ==="
 php artisan storage:link || echo "Storage link already exists"
 
 echo "=== Optimizing application ==="
+php artisan config:clear
 php artisan config:cache
 php artisan route:cache
 php artisan view:cache
