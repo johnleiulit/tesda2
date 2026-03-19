@@ -202,7 +202,12 @@ class ApplicantController extends Controller
                     $application->competencyAssessments()->create($c);
                 }
                 // Send notification after successful transaction
-                $application->user->notify(new ApplicationSubmittedNotification($application)); 
+                try {
+                    $application->user->notify(new ApplicationSubmittedNotification($application));
+                } catch (\Exception $e) {
+                    // Log email error but don't fail the application submission
+                    \Log::error('Failed to send application notification: ' . $e->getMessage());
+                }
             });     
 
             return redirect()->route('applicant.dashboard')->with('success', 'Application submitted.');
