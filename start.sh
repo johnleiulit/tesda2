@@ -5,6 +5,12 @@ echo "=== Starting deployment ==="
 echo "PORT: $PORT"
 echo "APP_ENV: $APP_ENV"
 
+echo "=== Clearing all caches ==="
+php artisan cache:clear
+php artisan config:clear
+php artisan route:clear
+php artisan view:clear
+
 echo "=== Setting up storage permissions ==="
 chmod -R 775 storage bootstrap/cache
 
