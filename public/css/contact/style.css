@@ -1,0 +1,11 @@
+nav{
+    background-color:  #1e3a5f;
+}
+@media (max-width: 991.98px) {
+  #hero-contact {
+    margin-top: 50px; /* Larger on mobile since navbar might be taller */
+  }
+}
+#hero-contact {
+    background-color: #1e3a5f;
+}

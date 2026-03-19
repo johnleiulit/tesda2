@@ -1,0 +1,27 @@
+#enrollmentCarousel .carousel-inner {
+    padding: 0 10%; /* Pushes content away from the arrows */
+}
+/* Small devices (phones) */
+#enrollmentCarousel .carousel-inner {
+    padding: 0 40px;
+}
+
+/* Medium and up (Tablets/Desktops) */
+@media (min-width: 768px) {
+    #enrollmentCarousel .carousel-inner {
+        padding: 0 100px;
+    }
+}
+nav {
+    background-color: #1e3a5f;
+}
+.ready{
+    background-color: #1e3a5f;
+}
+/* Phone screens */
+
+/* #enrollmentCarousel .carousel-control-prev,
+#enrollmentCarousel .carousel-control-next {
+  z-index: 10;
+  pointer-events: auto;
+} */

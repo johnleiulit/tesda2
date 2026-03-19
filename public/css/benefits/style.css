@@ -1,0 +1,11 @@
+#benefits { 
+    background-color: #1e3a5f ; 
+}
+nav{
+    background-color: #1e3a5f;
+}
+@media (max-width: 991.98px) {
+  #benefits {
+    margin-top: 70px; /* Larger on mobile since navbar might be taller */
+  }
+}

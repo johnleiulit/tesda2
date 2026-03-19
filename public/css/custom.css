@@ -1,0 +1,59 @@
+body{
+    background-color: rgb(238, 232, 232);
+     margin: 0;
+}
+.hero-section {
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+nav{
+    background-color:  #1e3a5f;
+}
+
+/* Gradient background layer */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 50%, #1e3a5f 100%);
+    z-index: 1;
+}
+
+/* Background image layer with opacity */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/images/bg-tesda.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 2;
+}
+
+/* Top to bottom gradient overlay */
+.hero-section .gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to top, #204069 0%, transparent 60%, transparent 100%);
+    z-index: 3;
+}
+
+/* Content container */
+.hero-section .container {
+    position: relative;
+    z-index: 4;
+}
+
