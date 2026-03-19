@@ -1,1 +1,1 @@
-web: php artisan migrate --force && php -S 0.0.0.0:$PORT -t public
+web: echo "=== PROCFILE WEB COMMAND RUNNING ===" && bash start.sh
