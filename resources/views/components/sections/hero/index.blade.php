@@ -1,4 +1,7 @@
 <section class="hero-section d-flex align-items-center" style="min-height: 100vh; position: relative; background: linear-gradient(135deg, #1e3a5f 0%, #2d4a6f 50%, #1e3a5f 100%);">
+    <!-- Background image layer -->
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background-image: url('{{ asset('images/bg-tesda.jpg') }}'); background-size: cover; background-position: center; opacity: 0.2; z-index: 2;"></div>
+    
     <div class="gradient-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to top, #204069 0%, transparent 60%, transparent 100%); z-index: 3;"></div>
     
     <div class="container text-white text-center" style="position: relative; z-index: 4;">
