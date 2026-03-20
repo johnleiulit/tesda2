@@ -28,6 +28,11 @@ php artisan migrate --force || echo "Migration failed but continuing..."
 echo "=== Creating storage link ==="
 php artisan storage:link || echo "Storage link already exists"
 
+echo "=== Checking public/images directory ==="
+ls -la public/images/ || echo "Images directory not found!"
+echo "Image files:"
+find public/images -type f || echo "No image files found!"
+
 echo "=== Optimizing application ==="
 php artisan config:clear
 php artisan config:cache
