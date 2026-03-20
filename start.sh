@@ -40,4 +40,19 @@ php artisan route:cache
 php artisan view:cache
 
 echo "=== Starting Laravel server on port $PORT ==="
-php -S 0.0.0.0:$PORT -t public public/index.php
+# Use router script to properly handle static files
+cat > router.php << 'EOF'
+<?php
+// Router script for PHP built-in server to handle static files
+$uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
+
+// Serve static files directly
+if ($uri !== '/' && file_exists(__DIR__ . '/public' . $uri)) {
+    return false;
+}
+
+// Otherwise, run Laravel
+require_once __DIR__ . '/public/index.php';
+EOF
+
+php -S 0.0.0.0:$PORT -t public router.php
